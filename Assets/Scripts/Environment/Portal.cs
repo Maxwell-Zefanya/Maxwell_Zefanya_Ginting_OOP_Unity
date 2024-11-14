@@ -32,7 +32,6 @@ public class Portal : MonoBehaviour
             Random.Range(-1.0f, 1.0f)*speed,
             Random.Range(-1.0f, 1.0f)*speed
         );
-        rb.angularVelocity = rotateSpeed;
     }
 
     // Update is called once per frame

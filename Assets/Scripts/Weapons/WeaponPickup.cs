@@ -16,6 +16,7 @@ public class WeaponPickup : MonoBehaviour
         // Buat clone dari prefab weaponHolder kedalam game
         weapon = Instantiate(weaponHolder, transform.position, transform.rotation);
         weapon_sr = weapon.GetComponent<SpriteRenderer>();
+        weapon.gameObject.SetActive(false);
     }
 
     // Start is called before the first frame update
@@ -51,6 +52,7 @@ public class WeaponPickup : MonoBehaviour
             }
             // Bila player belum (atau sudah) punya weapon, maka ubah
             // transform weapon (clone) kedalam transform Player
+            weapon.gameObject.SetActive(true);
             weapon.transform.SetParent(other.transform);
             weapon.transform.position = new Vector2
                 (
