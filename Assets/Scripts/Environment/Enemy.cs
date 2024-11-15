@@ -4,12 +4,15 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    // Cuma buat holding values doang
     protected Rigidbody2D rb;
-    protected float respawnTime;
-    protected float timer = 0f;
-    // Start is called before the first frame update
-    void Start()
-    {
-        rb = GetComponent<Rigidbody2D>();
+    [SerializeField] protected float velocity;
+    public int health;
+    protected float ySpawn;
+    protected float xSpawn;
+    protected bool isSpawned = false;
+
+    protected virtual void SpawnEnemy() {
+        Debug.Log("Base SpawnEnemy() called, needs fix");
     }
 }

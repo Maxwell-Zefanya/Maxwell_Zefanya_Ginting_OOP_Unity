@@ -9,14 +9,15 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6549045113938541413}
+  - component: {fileID: -2890790909971559836}
   - component: {fileID: 6438288106400361920}
   - component: {fileID: 1926435286314043854}
-  - component: {fileID: 4137293381563041577}
+  - component: {fileID: 652836629384349691}
   - component: {fileID: 8750639866030975681}
   - component: {fileID: 707533508022025574}
   m_Layer: 0
   m_Name: Bullet1
-  m_TagString: Untagged
+  m_TagString: PlayerBullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -36,6 +37,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-2890790909971559836
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1693216845438306440}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1990e4a17bc3f0948b5286d92a7dfb11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bullet: {fileID: 6438288106400361920}
+  damage: 20
 --- !u!114 &6438288106400361920
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -48,8 +63,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5209a1cd16f671409946e7fa64f352e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletSpeed: 20
-  damage: 10
+  bulletSpeed: 50
+  damage: 20
 --- !u!50 &1926435286314043854
 Rigidbody2D:
   serializedVersion: 4
@@ -77,8 +92,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!58 &4137293381563041577
-CircleCollider2D:
+--- !u!61 &652836629384349691
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -109,9 +124,19 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.105}
+  m_Offset: {x: 0, y: 0.3}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.53333336, y: 0}
+    oldSize: {x: 0.20833333, y: 0.5277778}
+    newSize: {x: 0.083333336, y: 0.125}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   serializedVersion: 2
-  m_Radius: 0.075
+  m_Size: {x: 0.2, y: 0.5}
+  m_EdgeRadius: 0
 --- !u!212 &8750639866030975681
 SpriteRenderer:
   m_ObjectHideFlags: 0

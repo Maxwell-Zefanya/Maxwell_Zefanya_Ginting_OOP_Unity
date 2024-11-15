@@ -24,6 +24,7 @@ public class Weapon : MonoBehaviour
 
     void Awake()
     {
+        // Startup --> Inisialisasi timer, objectpool, dll.
         timer = 0.0f;
         objectPool = new ObjectPool<Bullet>
             (CreateInstance, TakeFromPool, ReturnToPool, DestroyPool, collectionCheck, defaultCapacity, maxSize);
@@ -32,38 +33,50 @@ public class Weapon : MonoBehaviour
         bulletSpawnPoint.transform.parent = parentTransform.transform;
     }
 
+    // Pakai fixedUpdate biar lebih konsisten
+    // Shootinterval jangan dibawah <.1s 
     void FixedUpdate() {
+        // Timer dipake buat hitung delay dari last shot
         if(timer > shootIntervalInSeconds && objectPool != null) {
+            // Refer to CreateInstance() & TakeFromPool
             Bullet newBullet = objectPool.Get();
-            // Debug.Log("newBullet is "+newBullet.gameObject.name);
-            // Debug.Log("newBullet active? "+newBullet.gameObject.activeInHierarchy);
-            // Debug.Log("Pool obj avail: " + objectPool.CountInactive);
             if (newBullet == null) return;
+            // Fire weapon & reset timer
             newBullet.Fire();
             timer = 0.0f;
         } 
         timer += Time.fixedDeltaTime;
-        // Debug.Log("Timer: "+ timer);
     }
 
-    // Get()
+    // Get()?
     Bullet CreateInstance() {
-        Bullet poolBullet = Instantiate(bullet, bulletSpawnPoint.transform);
+        // Clone instance bullet yang ada di Prefab
+        Bullet poolBullet = Instantiate(bullet);
+        poolBullet.transform.parent = bulletSpawnPoint.transform;
+        poolBullet.transform.position = bulletSpawnPoint.transform.position;
+        // Masukin object bullet kedalam pool
         poolBullet.ObjectPool = objectPool;
-        // Debug.Log("poolBullet "+poolBullet.gameObject.name+" instantiated");
         return poolBullet;
     }
 
-    // 
+    // Get() juga kayanya
     void TakeFromPool(Bullet bullet) {
+        // Aktivasi objek
+        bullet.transform.parent = bulletSpawnPoint.transform;
+        bullet.transform.position = bulletSpawnPoint.transform.position;
         bullet.gameObject.SetActive(true);
     }
 
-    // Return()
+    // Return()?
     void ReturnToPool(Bullet bullet) {
+        // Kembaliin objek ke posisi awal (spawnpoint)
+        bullet.transform.parent = bulletSpawnPoint.transform;
+        bullet.gameObject.transform.position = bulletSpawnPoint.transform.position;
+        // Deaktivasi objek
         bullet.gameObject.SetActive(false);
     }
 
+    // ???
     void DestroyPool(Bullet bullet) {
         Destroy(bullet.gameObject);
     }

@@ -9,15 +9,15 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6549045113938541413}
-  - component: {fileID: 6199576604516389626}
+  - component: {fileID: 7943282409310792979}
   - component: {fileID: 6438288106400361920}
   - component: {fileID: 1926435286314043854}
   - component: {fileID: 4137293381563041577}
   - component: {fileID: 8750639866030975681}
   - component: {fileID: 707533508022025574}
   m_Layer: 0
-  m_Name: Bullet2
-  m_TagString: PlayerBullet
+  m_Name: BulletBoss
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -37,7 +37,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6199576604516389626
+--- !u!114 &7943282409310792979
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -50,7 +50,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 6438288106400361920}
-  damage: 10
+  damage: 50
 --- !u!114 &6438288106400361920
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -63,8 +63,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5209a1cd16f671409946e7fa64f352e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletSpeed: 20
-  damage: 10
+  bulletSpeed: -2
+  damage: 50
 --- !u!50 &1926435286314043854
 Rigidbody2D:
   serializedVersion: 4
@@ -124,9 +124,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.1}
+  m_Offset: {x: 0, y: 0.105}
   serializedVersion: 2
-  m_Radius: 0.075
+  m_Radius: 0.05
 --- !u!212 &8750639866030975681
 SpriteRenderer:
   m_ObjectHideFlags: 0

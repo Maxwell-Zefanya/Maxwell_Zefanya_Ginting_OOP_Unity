@@ -2,8 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyHorizontal : Enemy
+public class EnemyBoss : Enemy
 {
+
     void Start() {
         // Inisialisasi awal
         gameObject.SetActive(true);
@@ -38,12 +39,12 @@ public class EnemyHorizontal : Enemy
             if(health > 0) {
                 // Kalau musuh ada diluar map, invert posisi (velocity jangan)
                 // Cek kiri
-                if(rb.position.x < -9.1f) {
-                    rb.position = new Vector2(9.0f, ySpawn);
+                if(rb.position.x < -8.5f) {
+                    rb.velocity = new Vector2(velocity, 0.0f);
                 } 
                 // Cek kanan
-                if(rb.position.x > 9.1f) {
-                    rb.position = new Vector2(-9.0f, ySpawn);
+                if(rb.position.x > 8.5) {
+                    rb.velocity = new Vector2(-velocity, 0.0f);
                 }
             } else {
 
