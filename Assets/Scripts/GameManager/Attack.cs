@@ -45,5 +45,10 @@ public class Attack : MonoBehaviour
                 }
             }
         }
+
+        if (other.GetComponent<Invicibility>() != null)
+        {
+            other.GetComponent<Invicibility>().TriggerInvincibility();
+        }
     }
 }

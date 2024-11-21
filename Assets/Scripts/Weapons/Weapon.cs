@@ -42,6 +42,7 @@ public class Weapon : MonoBehaviour
             Bullet newBullet = objectPool.Get();
             if (newBullet == null) return;
             // Fire weapon & reset timer
+            newBullet.transform.SetPositionAndRotation(bulletSpawnPoint.position, bulletSpawnPoint.rotation);
             newBullet.Fire();
             timer = 0.0f;
         } 

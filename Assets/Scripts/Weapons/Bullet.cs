@@ -27,9 +27,14 @@ public class Bullet : MonoBehaviour
         StartCoroutine(FireRoutine());
     }
 
-    // void OnTriggerEnter2D(Collider2D other)
-    // {
-    //     // objectPool.Release(this);
-    //     Debug.Log("Bullet collided");
-    // }
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (gameObject.CompareTag("Enemy") != other.gameObject.CompareTag("Enemy") &&
+            gameObject.CompareTag("PlayerBullet") != other.gameObject.CompareTag("Player")
+        )
+        {
+            other.gameObject.GetComponent<Hitbox>().Damage(this);
+            objectPool.Release(this);
+        }
+    }
 }

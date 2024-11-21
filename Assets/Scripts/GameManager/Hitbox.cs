@@ -6,17 +6,28 @@ using UnityEngine;
 public class Hitbox : MonoBehaviour
 {
     public Health entityHealth;
-    void Awake()
+    Collider2D sr;
+    private Invicibility invincibilityComponent;
+
+    void Start()
     {
-        entityHealth = GetComponent<Health>();
-        Debug.Log("Health component for "+gameObject.name);
+        sr = GetComponent<Collider2D>();
+        invincibilityComponent = GetComponent<Invicibility>();
     }
 
-    public void Damage(Bullet bullet) {
-        entityHealth.Subtract(bullet.damage);
+    public void Damage(Bullet bullet)
+    {
+        if (invincibilityComponent != null && invincibilityComponent.isInvincible) return;
+
+        if (entityHealth != null)
+            entityHealth.Subtract(bullet.damage);
     }
 
-    public void Damage(int damage) {
-        entityHealth.Subtract(damage);
+    public void Damage(int damage)
+    {
+        if (invincibilityComponent != null && invincibilityComponent.isInvincible) return;
+
+        if (entityHealth != null)
+            entityHealth.Subtract(damage);
     }
 }

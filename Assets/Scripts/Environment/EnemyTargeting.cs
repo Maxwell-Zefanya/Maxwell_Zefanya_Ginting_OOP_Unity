@@ -39,7 +39,6 @@ public class EnemyTargeting : Enemy
                 playerActual.y += 0.5f;
                 // Interpolate posisi musuh ke posisi Player
                 Vector2 newPos = Vector2.MoveTowards(rb.position, playerActual, velocity*Time.fixedDeltaTime);
-                Debug.Log("Targeting Vector: "+newPos);
                 rb.position = new Vector2(newPos.x, newPos.y);
             } else {
 
