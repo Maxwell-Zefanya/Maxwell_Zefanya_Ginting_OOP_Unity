@@ -47,10 +47,11 @@ MonoBehaviour:
   spawnedEnemy: {fileID: 6191606162925163463, guid: d24e07b22f6552a49995fbe2af6752e4, type: 3}
   minimumKillsToIncreaseSpawnCount: 6
   totalKill: 0
-  spawnInterval: 3
+  spawnInterval: 2
   spawnCount: 2
   defaultSpawnCount: 2
   spawnCountMultiplier: 1
   multiplierIncreaseCount: 1
   combatManager: {fileID: 0}
   isSpawning: 0
+  pointMultiplier: 2

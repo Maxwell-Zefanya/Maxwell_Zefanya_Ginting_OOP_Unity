@@ -1,0 +1,19 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/Prefabs/UI/Default.uss?fileID=7433441132597879392&amp;guid=6b839834e8e897140a32c7fc03c9fc81&amp;type=3#Default" />
+    <ui:VisualElement style="flex-grow: 1;">
+        <ui:VisualElement name="Container" style="flex-grow: 1; height: auto; width: 100%; -unity-font: url(&quot;project://database/Library/unity%20default%20resources?fileID=10102&amp;guid=0000000000000000e000000000000000&amp;type=0#LegacyRuntime&quot;); justify-content: flex-start; align-self: center; top: 0; left: auto; right: auto; align-items: stretch; overflow: visible; display: flex;">
+            <ui:Label tabindex="-1" text="Health: " parse-escape-sequences="true" display-tooltip-when-elided="true" name="TextHealth" class="Default" style="-unity-text-align: middle-center; white-space: normal; text-overflow: clip; font-size: 20px; color: rgb(255, 255, 255); -unity-text-outline-width: 0; margin-top: 4px; align-self: center; justify-content: center; align-items: center; top: 5%; left: 5%; width: 110px; position: absolute;">
+                <ui:Label tabindex="-1" text="3" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Health" class="Default" style="left: 88%; align-self: flex-start; align-items: flex-start; justify-content: flex-end;" />
+            </ui:Label>
+            <ui:Label tabindex="-1" text="Point:" parse-escape-sequences="true" display-tooltip-when-elided="true" name="TextPoint" enable-rich-text="true" class="Default" style="-unity-text-align: middle-center; white-space: normal; text-overflow: clip; font-size: 20px; color: rgb(255, 255, 255); -unity-text-outline-width: 0; margin-top: 4px; align-self: center; justify-content: center; align-items: center; top: 10%; left: 5%; width: 110px; position: absolute;">
+                <ui:Label tabindex="-1" text="3" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Point" class="Default" style="left: 88%; align-self: flex-start; align-items: flex-start; justify-content: flex-end;" />
+            </ui:Label>
+            <ui:Label tabindex="-1" text="Wave:" parse-escape-sequences="true" display-tooltip-when-elided="true" name="TextWave" class="Default" style="-unity-text-align: middle-center; white-space: normal; text-overflow: clip; font-size: 20px; color: rgb(255, 255, 255); -unity-text-outline-width: 0; margin-top: 4px; align-self: center; justify-content: center; align-items: center; top: 5%; left: 87.5%; width: 110px; position: absolute;">
+                <ui:Label tabindex="-1" text="3" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Wave" class="Default" style="left: 88%; align-self: flex-start; align-items: flex-start; justify-content: flex-end;" />
+            </ui:Label>
+            <ui:Label tabindex="-1" text="Enemy:" parse-escape-sequences="true" display-tooltip-when-elided="true" name="TextEnemy" class="Default" style="-unity-text-align: middle-center; white-space: normal; text-overflow: clip; font-size: 20px; color: rgb(255, 255, 255); -unity-text-outline-width: 0; margin-top: 4px; align-self: center; justify-content: center; align-items: center; top: 10%; left: 87.5%; width: 110px; position: absolute;">
+                <ui:Label tabindex="-1" text="3" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Enemy" class="Default" style="left: 88%; align-self: flex-start; align-items: flex-start; justify-content: flex-end;" />
+            </ui:Label>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

@@ -1,0 +1,8 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/Prefabs/UI/Default.uss?fileID=7433441132597879392&amp;guid=6b839834e8e897140a32c7fc03c9fc81&amp;type=3#Default" />
+    <ui:VisualElement style="flex-grow: 1;">
+        <ui:VisualElement name="Container" style="flex-grow: 1; height: 146px; width: 20%; -unity-font: url(&quot;project://database/Library/unity%20default%20resources?fileID=10102&amp;guid=0000000000000000e000000000000000&amp;type=0#LegacyRuntime&quot;); justify-content: flex-start; align-self: center; top: 0; left: auto; right: auto; align-items: stretch; overflow: visible; display: flex;">
+            <ui:Label tabindex="-1" text="Pesawat Terbang Tembak-Tembakan 1.0" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Text" class="Default" style="-unity-text-align: middle-center; white-space: normal; text-overflow: clip; font-size: 20px; color: rgb(255, 255, 255); -unity-text-outline-width: 0; margin-top: 4px; align-self: center; justify-content: center; align-items: center; top: 15%;" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

@@ -8,8 +8,8 @@ public class CombatManager : MonoBehaviour
     public EnemySpawner[] enemySpawners;
     /*
         [0] Horizontal
-        [1] Vertical
-        [2] Targeting (tiap 2 wave)
+        [1] Vertical (tiap 2 wave)
+        [2] Targeting (tiap 3 wave)
         [3] Boss (tiap 5 wave)
     */
     public float timer = 0;                             // Waktu sebelum berganti Wave

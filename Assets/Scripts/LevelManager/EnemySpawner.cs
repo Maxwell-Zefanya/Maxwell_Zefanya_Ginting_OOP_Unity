@@ -21,6 +21,8 @@ public class EnemySpawner : MonoBehaviour
     float timer = 0f;
     int localCount = 0;
     int holdDestroyed = 0;
+    MainUIManager m;
+    [SerializeField] int pointMultiplier = 1;
     void FixedUpdate()
     {
         if(isSpawning == true && timer >= spawnInterval) {
@@ -62,12 +64,14 @@ public class EnemySpawner : MonoBehaviour
     }
 
     public void NextWave() {
+        m = GameObject.Find("Main UI").GetComponent<MainUIManager>();
         if(combatManager.waveNumber != 1 && totalKill%minimumKillsToIncreaseSpawnCount == 0) {
             spawnCountMultiplier += multiplierIncreaseCount;
             defaultSpawnCount *= spawnCountMultiplier;
         }
         spawnCount = defaultSpawnCount;
         totalKill += totalKillWave;
+        m.points += totalKillWave*pointMultiplier;
         totalKillWave = 0;
     }
 }
